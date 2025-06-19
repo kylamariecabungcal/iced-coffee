@@ -7,28 +7,52 @@ void main() {
         title: Text('Iced Coffee'),
         backgroundColor: Colors.brown[300],
       ),
-      body: Center(
-       child: Column(
-         mainAxisAlignment: MainAxisAlignment.center,
-         crossAxisAlignment: CrossAxisAlignment.center,
-           children: [
-           Text('Text 1', style: TextStyle(fontSize: 24,
-             fontWeight: FontWeight.bold,
-           ),
-           ),
-             Text('Text 2', style: TextStyle(fontSize: 30,
-               fontWeight: FontWeight.bold,
-             ),
-             ),
-             Text('Text 3', style: TextStyle(fontSize: 40,
-               fontWeight: FontWeight.bold,
-               fontStyle: FontStyle.italic,
-             ),
-             ),
-         ],
-       ),
+      body: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.all(10),
+              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+            child: Row(
+              children:const [
+                Text('Name:',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                ),
+                Text('Kyla Cabungcal',
+                  style: TextStyle(fontSize: 18),
+                ),
+              ],
+            ),
+    ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+            child: Row(
+              children:[
+                Text('Age: ',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                ),
+                Text('21 years old',
+                  style: TextStyle(fontSize: 18),
+                ),
+              ],
+            ),
+            ),
+              Container(
+                margin: EdgeInsets.fromLTRB(5,4,3,2),
+                padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                child: Row(
+                  children:[
+                    Text('Gender: ',
+                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                    ),
+                    Text('Female',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
+              ),
+        ],
       ),
-      backgroundColor: Colors.brown[200],
     ),
   ));
 }
