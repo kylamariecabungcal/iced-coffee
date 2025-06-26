@@ -3,57 +3,46 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
     home: Scaffold(
-      appBar: AppBar(
-        title: Text('Iced Coffee'),
-        backgroundColor: Colors.brown[300],
-      ),
-      body: Column(
+      backgroundColor: Colors.brown[100],
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              margin: EdgeInsets.all(10),
-              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-            child: Row(
-              children:const [
-                Text('Name:',
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                ),
-                Text('Kyla Cabungcal',
-                  style: TextStyle(fontSize: 18),
-                ),
-              ],
-            ),
-    ),
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-            child: Row(
-              children:[
-                Text('Age: ',
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                ),
-                Text('21 years old',
-                  style: TextStyle(fontSize: 18),
-                ),
-              ],
-            ),
-            ),
-              Container(
-                margin: EdgeInsets.fromLTRB(5,4,3,2),
-                padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                child: Row(
-                  children:[
-                    Text('Gender: ',
-                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                    ),
-                    Text('Female',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ],
+            const SizedBox(), // empty space at the top
+            const Center(
+              child: Text(
+                '"Coffee Journal"',
+                style: TextStyle(
+                  fontSize: 45,
+                  color: Colors.brown,
+                  fontStyle: FontStyle.italic,
                 ),
               ),
-        ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 40),
+              child: OutlinedButton(
+                onPressed: () {
+                },
+                style: OutlinedButton.styleFrom(
+                  side: const BorderSide(color: Colors.black, width: 2),
+                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: const Text(
+                  'LetsBrew!',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     ),
   ));
 }
-
