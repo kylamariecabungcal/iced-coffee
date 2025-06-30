@@ -1,48 +1,11 @@
+
 import 'package:flutter/material.dart';
+import 'package:ice_coffee/pages/Dashboard.dart';
+import 'package:ice_coffee/pages/ListItems.dart';
+
 
 void main() {
   runApp(MaterialApp(
-    home: Scaffold(
-      backgroundColor: Colors.brown[100],
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const SizedBox(), // empty space at the top
-            const Center(
-              child: Text(
-                '"Coffee Journal"',
-                style: TextStyle(
-                  fontSize: 45,
-                  color: Colors.brown,
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 40),
-              child: OutlinedButton(
-                onPressed: () {
-                },
-                style: OutlinedButton.styleFrom(
-                  side: const BorderSide(color: Colors.black, width: 2),
-                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                child: const Text(
-                  'LetsBrew!',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
+      home: Listitems()
   ));
 }
