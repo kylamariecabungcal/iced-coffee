@@ -25,7 +25,7 @@ class _ListitemsState extends State<Listitems> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.brown[100],
+        backgroundColor: Colors.brown[200],
         title: const Text(
           'Coffee',
           style: TextStyle(
@@ -39,7 +39,7 @@ class _ListitemsState extends State<Listitems> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Padding(
-              padding: EdgeInsets.all(12),
+              padding: EdgeInsets.all(10),
               child: Text(
                 'MY COFFEE',
                 style: TextStyle(
@@ -55,6 +55,14 @@ class _ListitemsState extends State<Listitems> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            Navigator.pushNamed(context, '/add');
+          },
+        backgroundColor: Colors.brown,
+        foregroundColor: Colors.white,
+        child: Icon(Icons.add),
+    ),
     );
   }
 }

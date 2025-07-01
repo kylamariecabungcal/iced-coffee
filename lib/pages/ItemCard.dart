@@ -15,13 +15,12 @@ class Itemcard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 3, horizontal: 16.0),
       child: Card(
-        color: Colors.brown[50],
+        color: Colors.brown[100],
         child: Padding(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // Left side: name and size
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
