@@ -1,7 +1,6 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-
+import 'package:ice_coffee/world_time/world_time_services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 class Loading extends StatefulWidget {
   const Loading({super.key});
 
@@ -11,30 +10,44 @@ class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading> {
 
-  void getTime() async {
 
-    Response response = await get(Uri.parse('https://timeapi.io/api/time/current/zone?timeZone=Europe%2FLondon'));
-    Map data = jsonDecode(response.body);
-    //print(data);
+  void setupWorldTime() async {
+    WorldTime instance = WorldTime(
+      location: 'Batangas',
+     // flag: '🇵🇭',
+      url: 'Asia/Manila',
+    );
 
-    //get properties from data
-    String datetime = data['dateTime']; // or 'datetime' depending on actual API key
-    print(datetime); // ← This line displays date and time in terminal
-    //String offset = data['offset'];
-    //print(offset);
+    await instance.getTime();
+
+    Navigator.pushReplacementNamed(
+      context, '/home',
+      arguments: {
+        'location': instance.location,
+        'time': instance.time,
+        'isDaytime': instance.isDaytime, // ✅ ADD this line
+      },
+    );
 
   }
+
 
   @override
   void initState() {
     super.initState();
-    getTime();
+    setupWorldTime();
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text('loading screen'),
+    return Scaffold(
+      backgroundColor: Colors.brown[50],
+      body: Center(
+        child:  SpinKitSpinningLines(
+          color: Colors.black,
+          size: 100,
+        ),
+      ),
     );
   }
 }
